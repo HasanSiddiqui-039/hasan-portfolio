@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Web Design | Hasan Siddiqui</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        color: #14213d;
+        background: #eef6ff;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    header {
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar {
+        position: relative;
+        width: 100%;
+        min-height: 75px;
+        padding: 0 4%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        text-decoration: none;
+        color: #14213d;
+        font-size: 28px;
+        font-weight: 900;
+        z-index: 2;
+    }
+
+    .logo span {
+        color: #1769ff;
+    }
+
+    .nav-menu {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu a {
+        color: #34435d;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        transition: 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .nav-menu a:hover {
+        color: #1769ff;
+    }
+
+    .hero {
+        padding: 100px 4%;
+        background: linear-gradient(
+            135deg,
+            #b8d6f2,
+            #eaf5ff
+        );
+    }
+
+    .hero-content {
+        max-width: 1100px;
+        margin: auto;
+
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .tag {
+        color: #1769ff;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        font-size: clamp(42px, 6vw, 70px);
+        line-height: 1.05;
+        margin: 15px 0 20px;
+    }
+
+    .hero-text p:not(.tag) {
+        color: #607087;
+        max-width: 650px;
+        margin-bottom: 25px;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #1769ff;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    .preview {
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        text-align: center;
+        box-shadow: 0 12px 30px rgba(30, 70, 110, 0.12);
+    }
+
+    .screen {
+        height: 190px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+
+        background: linear-gradient(
+            135deg,
+            #1769ff 0 20%,
+            #dceaff 20% 80%,
+            #8db9eb 80%
+        );
+    }
+
+    .preview p {
+        color: #68778d;
+    }
+
+    .section {
+        padding: 80px 4%;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .section h2 {
+        font-size: 38px;
+        margin: 8px 0 35px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(30, 70, 110, 0.08);
+    }
+
+    .icon {
+        width: 55px;
+        height: 55px;
+        margin: 0 auto 16px;
+
+        display: grid;
+        place-items: center;
+
+        background: #edf5ff;
+        color: #1769ff;
+        border-radius: 12px;
+        font-weight: bold;
+    }
+
+    .card p {
+        color: #68778d;
+    }
+
+    .about {
+        max-width: none;
+        background: white;
+    }
+
+    .about p {
+        max-width: 1100px;
+        margin: auto;
+        color: #68778d;
+    }
+
+    footer {
+        padding: 25px;
+        background: #14213d;
+        color: white;
+        text-align: center;
+    }
+
+    @media (max-width: 800px) {
+
+        .hero-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .hero-text p:not(.tag) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        .preview {
+            max-width: 500px;
+            width: 100%;
+            margin: auto;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .navbar {
+            min-height: auto;
+            padding: 15px 4%;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .logo {
+            font-size: 26px;
+        }
+
+        .nav-menu {
+            position: static;
+            transform: none;
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-menu a {
+            font-size: 14px;
+        }
+
+        .hero {
+            padding: 65px 4%;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        .section {
+            padding: 60px 4%;
+        }
+
+        .section h2 {
+            font-size: 32px;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+
+            <a href="#home" class="logo">
+                Hasan<span>.</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="tag">
+                    RESPONSIVE WEB DESIGN
+                </p>
+
+                <h1>
+                    A Website That Works on Every Screen
+                </h1>
+
+                <p>
+                    This project demonstrates responsive web design
+                    using HTML5 and CSS3. The website works properly
+                    on desktop, tablet and mobile devices.
+                </p>
+
+                <a href="#features" class="button">
+                    Explore Project
+                </a>
+            </div>
+
+            <div class="preview">
+                <div class="screen"></div>
+
+                <h2>Responsive Layout</h2>
+
+                <p>Desktop • Tablet • Mobile</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <p class="tag">FEATURES</p>
+
+        <h2>
+            What This Project Demonstrates
+        </h2>
+
+
+        <div class="cards">
+            <div class="card">
+                <div class="icon">↔</div>
+
+                <h3>Flexible Layout</h3>
+
+                <p>
+                    Flexible layouts automatically adjust
+                    according to screen size.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">▣</div>
+
+                <h3>Mobile Friendly</h3>
+
+                <p>
+                    The website remains easy to use on
+                    smartphones and tablets.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">CSS</div>
+
+                <h3>Modern CSS</h3>
+
+                <p>
+                    Uses CSS Grid, Flexbox and media queries.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <p class="tag">
+            ABOUT PROJECT
+        </p>
+
+        <h2>
+            Built with HTML5 & CSS3
+        </h2>
+
+        <p>
+            This project demonstrates my understanding of
+            responsive layouts, Flexbox, CSS Grid and
+            media queries.
+        </p>
+    </section>
+
+    <footer>
+        <p>
+            © <span id="year"></span> Hasan Siddiqui
+        </p>
+    </footer>
+
+    <script>
+        const year =
+            document.getElementById("year");
+
+        if (year) {
+            year.textContent =
+                new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>

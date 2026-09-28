@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Hasan Web Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-box">HS</div>
+
+                <div>
+                    <h2>Hasan Web Solutions</h2>
+                    <p>Web Developer</p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="services.html">Services</a>
+
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+
+            <p>GET IN TOUCH</p>
+
+            <h1>Contact Me</h1>
+
+            <span>
+                Have a project? Feel free to contact me.
+            </span>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container contact-content">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+
+                <p>
+                    You can contact me using the information
+                    given below.
+                </p>
+
+                <div class="info-item">
+                    <strong>Email</strong>
+
+                    <span>
+                        hs0721507@gmail.com
+                    </span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Phone</strong>
+
+                    <span>
+                        03310141671
+                    </span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Location</strong>
+
+                    <span>
+                        Karachi, Pakistan
+                    </span>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send a Message</h2>
+
+                <form id="contactForm">
+
+                    <label for="name">
+                        Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        rows="6"
+                        placeholder="Write your message"
+                        required
+                    ></textarea>
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                © <span id="year"></span> Hasan Web Solutions.
+                All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const message =
+                    document.getElementById("message").value.trim();
+
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (name === "") {
+
+                    alert("Please enter your name.");
+                    return;
+
+                }
+
+
+                if (!emailPattern.test(email)) {
+
+                    alert("Please enter a valid email.");
+                    return;
+
+                }
+
+
+                if (message === "") {
+
+                    alert("Please enter your message.");
+                    return;
+
+                }
+
+
+                alert(
+                    "Thank you " +
+                    name +
+                    "! Your message has been submitted."
+                );
+
+
+                this.reset();
+
+            });
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+</body>
+</html>

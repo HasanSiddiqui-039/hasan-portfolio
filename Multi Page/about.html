@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Hasan Web Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-box">HS</div>
+
+                <div>
+                    <h2>Hasan Web Solutions</h2>
+                    <p>Web Developer</p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="small-title">WELCOME TO MY WEBSITE</p>
+
+                <h1>
+                    Professional
+                    <span>Web Development</span>
+                    Services
+                </h1>
+
+                <p>
+                    I create clean, responsive and user-friendly websites
+                    using HTML, CSS and JavaScript.
+                </p>
+
+                <div class="buttons">
+                    <a href="services.html" class="btn">View Services</a>
+                    <a href="contact.html" class="btn secondary">Contact Me</a>
+                </div>
+            </div>
+
+            <div class="code-box">
+                <div class="code-top">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <pre>
+&lt;div class="website"&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+
+    &lt;p&gt;
+        Welcome to my website.
+    &lt;/p&gt;
+&lt;/div&gt;
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+
+            <div class="section-title">
+                <p>WHAT I DO</p>
+                <h2>My Main Skills</h2>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="icon">🌐</div>
+                    <h3>Web Design</h3>
+                    <p>
+                        I design clean and modern websites
+                        using HTML and CSS.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>
+                        Websites that work properly on
+                        mobile, tablet and desktop.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>
+                        I use JavaScript to add interaction
+                        and functionality to websites.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                © <span id="year"></span> Hasan Web Solutions. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+</body>
+</html>

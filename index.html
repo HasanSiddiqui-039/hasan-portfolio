@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hasan Siddiqui's web development projects">
+  <title>Hasan Siddiqui | Projects</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    :root {
+      --bg: #080d18;
+      --card: #111a2b;
+      --muted: #9aa8bd;
+      --text: #f5f7fb;
+      --accent: #63e6be;
+      --accent-glow: rgba(99, 230, 190, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: 
+        radial-gradient(ellipse at 15% 10%, #17334a 0, transparent 36%),
+        radial-gradient(ellipse at 90% 80%, #25204b 0, transparent 34%),
+        var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Grid Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, #000, transparent 85%);
+      -webkit-mask-image: linear-gradient(to bottom, #000, transparent 85%);
+    }
+
+    .wrap {
+      width: min(1120px, 92%);
+      margin: auto;
+      position: relative;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 26px 0;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .nav:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 76px 0 48px;
+      animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(99, 230, 190, 0.27);
+      background: rgba(99, 230, 190, 0.05);
+      color: var(--accent);
+      padding: 9px 15px;
+      border-radius: 99px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5.4rem);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin: 24px 0 16px;
+      font-weight: 800;
+    }
+
+    h1 span {
+      background: linear-gradient(100deg, #ffffff 10%, #63e6be 55%, #a78bfa 95%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .intro {
+      max-width: 610px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* Section Header */
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin: 28px 0 20px;
+    }
+
+    .section-head h2 {
+      font-size: 1.25rem;
+    }
+
+    .count {
+      font-size: 0.78rem;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 7px 11px;
+      border-radius: 99px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    /* Cards Grid & Glassmorphism Styling */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      padding-bottom: 60px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      min-height: 275px;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.35s ease, 
+                  box-shadow 0.35s ease;
+      animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .card:nth-child(2) { animation-delay: 0.12s; }
+    .card:nth-child(3) { animation-delay: 0.24s; }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -85px;
+      top: -90px;
+      border-radius: 50%;
+      background: var(--glow, #63e6be);
+      filter: blur(75px);
+      opacity: 0.22;
+      transition: opacity 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-9px);
+      border-color: rgba(99, 230, 190, 0.45);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .card:hover::before {
+      opacity: 0.45;
+    }
+
+    .iconbox {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(99, 230, 190, 0.08);
+      border: 1px solid rgba(99, 230, 190, 0.2);
+      color: var(--accent);
+      margin-bottom: 23px;
+    }
+
+    .iconbox svg {
+      width: 25px;
+      height: 25px;
+    }
+
+    .tag {
+      font-size: 0.68rem;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 9px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .desc {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    /* Buttons & Interactive Elements */
+    .open {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: #08110f;
+      background: var(--accent);
+      padding: 12px 15px;
+      border-radius: 12px;
+      font-size: 0.83rem;
+      font-weight: 800;
+      transition: filter 0.25s ease, transform 0.25s ease;
+    }
+
+    .open:hover {
+      filter: brightness(1.1);
+      transform: scale(1.01);
+    }
+
+    .arrow {
+      font-size: 1.1rem;
+      transition: transform 0.25s ease;
+    }
+
+    .open:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 22px 0 28px;
+      text-align: center;
+      color: #78869b;
+      font-size: 0.78rem;
+    }
+
+    footer strong {
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    /* Keyframes */
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 850px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .hero {
+        padding-top: 58px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header {
+        padding: 20px 0;
+      }
+      .hero {
+        padding: 54px 0 36px;
+      }
+      h1 {
+        letter-spacing: -1.8px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      .card {
+        min-height: 250px;
+      }
+      .section-head {
+        margin-top: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="" aria-label="Hasan Siddiqui home">HS<span>.</span></a>
+      <a class="nav" href="mailto:">Web Development Portfolio</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span class="dot"></span> Selected work</div>
+        <h1>My <span>Projects</span></h1>
+        <p class="intro">Welcome to my project space. Explore my web development work, built with a focus on clean design, responsive layouts and user experience.</p>
+      </section>
+
+      <section aria-labelledby="projects-title">
+        <div class="section-head">
+          <h2 id="projects-title">Explore projects</h2>
+          <span class="count">03 Projects</span>
+        </div>
+        <div class="grid">
+          <article class="card" style="--glow:#63e6be">
+            <div class="iconbox" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="3.5"/>
+                <path d="M5 20c.8-3.5 3.1-5.3 7-5.3s6.2 1.8 7 5.3"/>
+                <path d="M18 4h3M19.5 2.5v3"/>
+              </svg>
+            </div>
+            <div class="tag">Project 01</div>
+            <h3>Personal Portfolio</h3>
+            <p class="desc">A personal website showcasing my profile, skills and web development journey.</p>
+            <a class="open" href="./Personal%20Portfolio%20Website/index.html">Open Project <span class="arrow">→</span></a>
+          </article>
+
+          <article class="card" style="--glow:#a78bfa">
+            <div class="iconbox" aria-hidden="true" style="color:#b9a5ff;background:rgba(167, 139, 250, 0.08);border-color:rgba(167, 139, 250, 0.2)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3"/>
+                <path d="M3 9h18M9 21V9"/>
+              </svg>
+            </div>
+            <div class="tag" style="color:#b9a5ff">Project 02</div>
+            <h3>Multi Page Website</h3>
+            <p class="desc">A multi-page website with separate pages for home, about, services and contact.</p>
+            <a class="open" href="./Multi%20Page/index.html">Open Project <span class="arrow">→</span></a>
+          </article>
+
+          <article class="card" style="--glow:#60a5fa">
+            <div class="iconbox" aria-hidden="true" style="color:#93c5fd;background:rgba(96, 165, 250, 0.08);border-color:rgba(96, 165, 250, 0.2)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                <path d="M3 9h18M8 9v11"/>
+              </svg>
+            </div>
+            <div class="tag" style="color:#93c5fd">Project 03</div>
+            <h3>Responsive Navbar</h3>
+            <p class="desc">A responsive navigation bar designed to adapt to desktop and mobile screens.</p>
+            <a class="open" href="./Responsive%20Navbar/index.html">Open Project <span class="arrow">→</span></a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>Designed &amp; developed by <strong>Hasan Siddiqui</strong> · 2026</footer>
+  </div>
+</body>
+</html>

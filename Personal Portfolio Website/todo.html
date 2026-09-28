@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Hasan Siddiqui | To-Do List</title>
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f1f5f9;
+    color:#0f172a
+}
+.app{
+    max-width:650px;
+    margin:50px auto;
+    padding:20px
+}
+.card{
+    background:white;
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 12px 35px #0001
+}
+.title{
+    text-align:center;
+    margin-bottom:22px
+}
+.add{
+    display:flex;
+    gap:10px
+}
+.add input{
+    flex:1;
+    padding:13px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:15px
+}
+.add button{
+    border:0;
+    border-radius:10px;
+    padding:0 20px;
+    background:#2563eb;
+    color:#fff;
+    font-weight:700;
+    cursor:pointer
+}
+.filters{
+    display:flex;
+    gap:8px;
+    margin:20px 0
+}
+.filters button{
+    border:1px solid #cbd5e1;
+    background:#fff;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer
+}
+.filters button.active{
+    background:#2563eb;
+    color:white
+}
+.stats{
+    font-size:13px;
+    color:#64748b;
+    margin-bottom:10px
+}
+.list{
+    list-style:none;
+    padding:0;
+    margin:0
+}
+.item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 0;
+    border-bottom:1px solid #e2e8f0
+}
+.item span{
+    flex:1
+}
+.item.completed span{
+    text-decoration:line-through;
+    color:#94a3b8
+}
+.delete{
+    border:0;
+    background:#fee2e2;
+    color:#b91c1c;
+    padding:7px 10px;
+    border-radius:7px;
+    cursor:pointer
+}
+.empty{
+    text-align:center;
+    color:#94a3b8;padding:25px
+}
+</style>
+</head>
+     <body>
+        <div class="app">
+            <div class="card">
+                <div class="title">
+                    <h1>My To-Do List</h1>
+                    <p>Add, complete and delete your tasks.</p>
+                </div>
+<form class="add" id="todoForm">
+    <input id="taskInput" placeholder="Enter a task..." autocomplete="off">
+    <button>Add</button>
+</form>
+   <div class="filters">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="active">Active</button>
+    <button data-filter="completed">Completed</button>
+   </div>
+    <div class="stats" id="stats"></div>
+       <ul class="list" id="list"></ul>
+    <div class="empty" id="empty">No tasks yet.</div>
+  </div>
+</div>
+<script>
+const KEY='hasan_todo_tasks';
+let tasks=JSON.parse(localStorage.getItem(KEY)||'[]'),filter='all';
+const input=document.getElementById('taskInput'),list=document.getElementById('list'),empty=document.getElementById('empty'),stats=document.getElementById('stats');
+function save(){
+    localStorage.setItem(KEY,JSON.stringify(tasks));render()}
+function render(){
+    list.innerHTML='';
+    const shown=tasks.filter(t=>filter==='all'||(filter==='active'&&!t.done)||(filter==='completed'&&t.done));
+    empty.style.display=shown.length?'none':'block';
+    stats.textContent=`Total: ${tasks.length} | Active: ${tasks.filter(t=>!t.done).length} | Completed: ${tasks.filter(t=>t.done).length}`;
+    shown.forEach(t=>{const li=document.createElement('li');
+    li.className='item'+(t.done?' completed':'');
+    li.innerHTML=`<input type="checkbox" ${t.done?'checked':''} aria-label="complete task"><span></span><button class="delete">Delete</button>`;
+    li.querySelector('span').textContent=t.text;
+    li.querySelector('input').onchange=()=>{t.done=!t.done;save()};
+    li.querySelector('.delete').onclick=()=>{tasks=tasks.filter(x=>x.id!==t.id);save()};
+    list.appendChild(li)})
+}
+document.getElementById('todoForm').onsubmit=e=>{e.preventDefault();
+const text=input.value.trim();
+if(!text)return;
+tasks.push({id:Date.now(),text,done:false});
+input.value='';save();
+input.focus()};
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;
+document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');render()});render();
+</script>
+</body>
+</html>
