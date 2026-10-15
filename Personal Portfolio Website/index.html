@@ -1,161 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammad Hasan Siddiqui — Computer Information Technology student and aspiring Web Developer from Karachi, Pakistan.">
-    <title>Hasan Siddiqui — Web Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hasan Siddiqui | Web Developer</title>
+<meta name="description" content="Muhammad Hasan Siddiqui, Computer Information Technology student and web developer from Karachi, Pakistan.">
+<meta name="theme-color" content="#090a0f">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Muhammad Hasan Siddiqui","jobTitle":"Web Developer","email":"hs0721507@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Karachi","addressCountry":"PK"},"sameAs":["https://github.com/HasanSiddiqui-039","https://www.linkedin.com/in/hasan-siddiqui-ab7766374"]}</script>
 </head>
 <body>
-    <div class="noise"></div>
-    <div class="cursor-glow" id="cursorGlow"></div>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div><canvas id="fx" aria-hidden="true"></canvas><div class="glow" id="glow" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
 
-    <header class="site-header">
-        <a href="#home" class="brand" aria-label="Hasan Siddiqui home">
-            <span class="brand-mark">HS</span>
-            <span>HASAN.S</span>
-        </a>
+<header class="bar">
+  <a class="brand" href="#home" aria-label="Home"><img src="assets/logo.png" alt="HS logo" width="80" height="80"><span></span></a>
+  <nav class="nav" id="nav" aria-label="Primary">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="tools">
+    <button class="chip" id="paletteBtn" aria-label="Open command menu">Search <kbd>Ctrl K</kbd></button>
+    <button class="icon" id="themeBtn" aria-label="Toggle theme">◐</button>
+    <button class="icon menu" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
 
-        <nav class="desktop-nav" aria-label="Primary navigation">
-            <a href="#home" class="nav-link active">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-
-        <a class="header-status" href="https://github.com/HasanSiddiqui-039" target="_blank" rel="noopener noreferrer">
-            <span class="status-dot"></span> GitHub ↗
-        </a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    </header>
-
-    <div class="mobile-nav" id="mobileNav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+<main id="main">
+  <section class="hero wrap" id="home">
+    <div class="hero-copy">
+      <p class="status"><i></i> Open to internships and collaboration</p>
+      <h1>Muhammad Hasan Siddiqui builds fast, responsive websites.</h1>
+      <p class="lead">I'm a Computer Information Technology student in Karachi. I turn clean layouts into interactive pages with HTML, CSS and JavaScript.</p>
+      <div class="cta"><a class="btn primary" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
     </div>
+    <div class="editor" aria-label="About me as code">
+      <div class="ring"><img src="assets/hasan.jpeg" alt="Muhammad Hasan Siddiqui" width="96" height="96"></div>
+      <div class="tabs"><span></span><span></span><span></span><em>hasan.js</em></div>
+      <pre><code id="code" aria-live="off"></code><span class="caret"></span></pre>
+    </div>
+  </section>
 
-    <main>
-        <section class="hero section-shell" id="home">
-            <div class="hero-grid">
-                <div class="hero-copy reveal">
-                    <p class="kicker"><span>01</span> COMPUTER INFORMATION TECHNOLOGY</p>
-                    <h1>MUHAMMAD<br><span>HASAN SIDDIQUI</span></h1>
-                    <p class="role-line">WEB DEVELOPER <i>/</i> CIT STUDENT</p>
-                    <p class="hero-text">I build responsive, interactive web experiences while continuously improving my skills in modern web technologies.</p>
-                    <div class="hero-actions">
-                        <a class="btn btn-solid" href="#projects">View Projects <span>↗</span></a>
-                        <a class="btn btn-ghost" href="#contact">Let's Connect</a>
-                    </div>
-                </div>
+  <section class="wrap facts" aria-label="Quick facts">
+    <div><small>Based in</small><b>Karachi, Pakistan</b></div>
+    <div><small>Focus</small><b>Web development</b></div>
+    <div><small>Studying</small><b>DCIT, 2024 to 2027</b></div>
+    <div><small>Status</small><b>Learning and building</b></div>
+  </section>
 
-                <div class="hero-visual reveal delay-1">
-                    <div class="portrait-frame">
-                        <div class="frame-label"></div>
-                        <img src="assets/WhatsApp Image 2026-08-30 at 12.44.32 AM (1).jpeg" alt="Muhammad Hasan Siddiqui">
-                    </div>
-                </div>
-            </div>
+  <div class="marquee" aria-hidden="true"><div class="track"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span><span>GitHub</span><span>Responsive design</span><span>Animations</span><span>MS Office</span><span>Digital marketing</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span><span>GitHub</span><span>Responsive design</span><span>Animations</span><span>MS Office</span><span>Digital marketing</span></div></div>
 
-            <div class="hero-meta reveal delay-2">
-                <div><span>BASED IN</span><strong>KARACHI, PAKISTAN</strong></div>
-                <div><span>FOCUS</span><strong>WEB DEVELOPMENT</strong></div>
-                <div><span>STATUS</span><strong><em></em> LEARNING &amp; BUILDING</strong></div>
-                <div><span>2024—2027</span><strong>DCIT / IN PROGRESS</strong></div>
-            </div>
-        </section>
+  <section class="wrap sec" id="about">
+    <h2>About me</h2>
+    <div class="about">
+      <p>I'm a motivated learner focused on web development, computer operations and practical digital skills. My approach is simple: learn the fundamentals, build real projects, and keep improving.</p>
+      <dl>
+        <div class="spot"><dt>Education</dt><dd>Aligarh Institute of Technology</dd></div>
+        <div class="spot"><dt>Courses</dt><dd>Computer Operator, Digital Marketing</dd></div>
+        <div class="spot"><dt>Interests</dt><dd>Web development, computer operations</dd></div>
+      </dl>
+    </div>
+  </section>
 
-        <section class="section-shell terminal-section" id="about">
-            <div class="section-intro reveal">
-                <span class="section-number">02 / ABOUT</span>
-                <h2>WHO AM I?</h2>
-            </div>
+  <section class="wrap sec" id="skills">
+    <h2>Tech stack</h2>
+    <div class="grid skills">
+      <article class="spot"><h3>HTML5</h3><p>Semantic structure and accessible pages.</p></article>
+      <article class="spot"><h3>CSS3</h3><p>Responsive layouts, animations and UI.</p></article>
+      <article class="spot"><h3>JavaScript</h3><p>DOM manipulation and interactive logic.</p></article>
+      <article class="spot"><h3>Git and GitHub</h3><p>Version control and project workflow.</p></article>
+      <article class="spot"><h3>MS Office</h3><p>Documents, spreadsheets and presentations.</p></article>
+      <article class="spot"><h3>Digital marketing</h3><p>Digital content and marketing basics.</p></article>
+    </div>
+  </section>
 
-            <div class="terminal reveal delay-1">
-                <div class="terminal-bar"><span></span><span></span><span></span><b>hasan@portfolio:~</b></div>
-                <div class="terminal-body">
-                    <p><span class="prompt">$</span> whoami</p>
-                    <h3>Computer Information Technology Student</h3>
-                    <p class="terminal-muted">A motivated learner focused on web development, computer operations and practical digital skills.</p>
-                    <p><span class="prompt">$</span> cat philosophy.txt</p>
-                    <blockquote>“Learn the fundamentals. Build practical projects. Keep improving.”</blockquote>
-                    <div class="terminal-facts">
-                        <div><small>EDUCATION</small><strong>Aligarh Institute of Technology</strong></div>
-                        <div><small>COURSES</small><strong>Computer Operator · Digital Marketing</strong></div>
-                        <div><small>INTERESTS</small><strong>Web Development · Computer Operations</strong></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="wrap sec" id="projects">
+    <div class="head"><h2>Projects</h2><span id="count" class="muted">Loading</span></div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by language"></div>
+    <div class="grid repos" id="repos" aria-live="polite"><p class="muted">Loading repositories from GitHub…</p></div>
+  </section>
 
-        <section class="section-shell" id="skills">
-            <div class="section-intro split reveal">
-                <div><span class="section-number">03 / CAPABILITIES</span><h2>MY TECH STACK</h2></div>
-                <p>Tools and technologies I am learning and using in practical projects.</p>
-            </div>
+  <section class="wrap sec" id="contact">
+    <h2>Let's work together</h2>
+    <div class="contact">
+      <div>
+        <p class="lead">Have a project, internship or collaboration in mind? Send a message and I'll get back to you.</p>
+        <ul class="links">
+          <li><button class="copy" data-copy="hs0721507@gmail.com">hs0721507@gmail.com <small>Copy</small></button></li>
+          <li><a href="tel:+923310141671">0331 0141671</a></li>
+          <li><a href="https://github.com/HasanSiddiqui-039" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/hasan-siddiqui-ab7766374" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+      <form id="form" class="spot" novalidate>
+        <label>Name<input id="name" required autocomplete="name"></label>
+        <label>Email<input id="email" type="email" required autocomplete="email"></label>
+        <label>Message<textarea id="msg" rows="4" required></textarea></label>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
 
-            <div class="skills-grid reveal delay-1">
-                <article class="skill-item"><span>01</span><h3>HTML5</h3><p>Semantic structure & accessible pages.</p></article>
-                <article class="skill-item"><span>02</span><h3>CSS3</h3><p>Responsive layouts, animations & UI.</p></article>
-                <article class="skill-item"><span>03</span><h3>JavaScript</h3><p>DOM manipulation & interactive logic.</p></article>
-                <article class="skill-item"><span>04</span><h3>Git / GitHub</h3><p>Version control & project workflow.</p></article>
-                <article class="skill-item"><span>05</span><h3>MS Office</h3><p>Documents, spreadsheets & presentations.</p></article>
-                <article class="skill-item"><span>06</span><h3>Digital Marketing</h3><p>Digital content & marketing fundamentals.</p></article>
-            </div>
-        </section>
+<footer class="wrap foot"><span>© <span id="year"></span> Hasan Siddiqui</span><button class="chip" id="topBtn">Back to top</button></footer>
 
-        <section class="section-shell projects-section" id="projects">
-            <div class="section-intro split reveal">
-                <div><span class="section-number">04 / SELECTED WORK</span><h2>PROJECTS</h2></div>
-                <span class="project-count" id="repoCount">-- REPOSITORIES</span>
-            </div>
-
-            <div class="projects-grid" id="reposGrid" aria-live="polite">
-                <div class="repo-status">LOADING REPOSITORIES...</div>
-            </div>
-        </section>
-
-        <section class="section-shell contact-section" id="contact">
-            <div class="section-intro reveal">
-                <span class="section-number">05 / CONTACT</span>
-                <h2>LET'S CONNECT</h2>
-            </div>
-
-            <div class="contact-layout">
-                <div class="contact-copy reveal">
-                    <p class="contact-lead">Have a project, internship opportunity or collaboration in mind?</p>
-                    <p class="terminal-muted">Send a message and I’ll get back to you.</p>
-                    <div class="contact-list">
-                        <a href="mailto:hs0721507@gmail.com"><span>EMAIL</span>hs0721507@gmail.com ↗</a>
-                        <a href="tel:+923310141671"><span>PHONE</span>03310141671 ↗</a>
-                        <div><span>LOCATION</span>Karachi, Pakistan</div>
-                    </div>
-                </div>
-
-                <form class="contact-terminal reveal delay-1" id="contactForm">
-                    <div class="terminal-bar"><span></span><span></span><span></span><b>message.exe</b></div>
-                    <label>Name<input id="name" type="text" placeholder="Your name" required></label>
-                    <label>Email<input id="email" type="email" placeholder="you@example.com" required></label>
-                    <label>Message<textarea id="message" rows="5" placeholder="Write your message..." required></textarea></label>
-                    <button type="submit" class="submit-btn">SEND MESSAGE <span>↗</span></button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <span>© <span id="year"></span> HASAN SIDDIQUI</span>
-        <div><a href="https://github.com/HasanSiddiqui-039" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/hasan-siddiqui-ab7766374" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
-    </footer>
-
-    <script src="script.js"></script>
+<dialog id="palette" aria-label="Command menu">
+  <input id="pq" placeholder="Jump to…" aria-label="Search commands" autocomplete="off">
+  <ul id="pl"></ul>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
 </body>
 </html>
