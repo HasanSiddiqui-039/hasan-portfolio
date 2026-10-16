@@ -23,7 +23,7 @@
     <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
   </nav>
   <div class="tools">
-    <button class="chip" id="paletteBtn" aria-label="Open command menu">Search <kbd>Ctrl K</kbd></button>
+    <button class="chip" id="paletteBtn" aria-label="Open command menu">Search <kbd></kbd></button>
     <button class="icon" id="themeBtn" aria-label="Toggle theme">◐</button>
     <button class="icon menu" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
   </div>
@@ -32,13 +32,12 @@
 <main id="main">
   <section class="hero wrap" id="home">
     <div class="hero-copy">
-      <p class="status"><i></i> Open to internships and collaboration</p>
-      <h1>Muhammad Hasan Siddiqui builds fast, responsive websites.</h1>
+      <h1>Muhammad Hasan Siddiqui</h1>
       <p class="lead">I'm a Computer Information Technology student in Karachi. I turn clean layouts into interactive pages with HTML, CSS and JavaScript.</p>
       <div class="cta"><a class="btn primary" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
     </div>
     <div class="editor" aria-label="About me as code">
-      <div class="ring"><img src="assets/hasan.jpeg" alt="Muhammad Hasan Siddiqui" width="96" height="96"></div>
+      <div class="ring"><img src="Personal Portfolio Website/hasan.jpeg" alt="Muhammad Hasan Siddiqui" width="96" height="96"></div>
       <div class="tabs"><span></span><span></span><span></span><em>hasan.js</em></div>
       <pre><code id="code" aria-live="off"></code><span class="caret"></span></pre>
     </div>
@@ -51,7 +50,28 @@
     <div><small>Status</small><b>Learning and building</b></div>
   </section>
 
-  <div class="marquee" aria-hidden="true"><div class="track"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span><span>GitHub</span><span>Responsive design</span><span>Animations</span><span>MS Office</span><span>Digital marketing</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Git</span><span>GitHub</span><span>Responsive design</span><span>Animations</span><span>MS Office</span><span>Digital marketing</span></div></div>
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>HTML5</span>
+      <span>CSS3</span>
+      <span>JavaScript</span>
+      <span>Git</span>
+      <span>GitHub</span>
+      <span>Responsive design</span>
+      <span>Animations</span>
+      <span>MS Office</span>
+      <span>Digital marketing</span>
+      <span>HTML5</span>
+      <span>CSS3</span>
+      <span>JavaScript</span>
+      <span>Git</span>
+      <span>GitHub</span>
+      <span>Responsive design</span>
+      <span>Animations</span>
+      <span>MS Office</span>
+      <span>Digital marketing</span>
+    </div>
+  </div>
 
   <section class="wrap sec" id="about">
     <h2>About me</h2>
@@ -59,7 +79,7 @@
       <p>I'm a motivated learner focused on web development, computer operations and practical digital skills. My approach is simple: learn the fundamentals, build real projects, and keep improving.</p>
       <dl>
         <div class="spot"><dt>Education</dt><dd>Aligarh Institute of Technology</dd></div>
-        <div class="spot"><dt>Courses</dt><dd>Computer Operator, Digital Marketing</dd></div>
+        <div class="spot"><dt>Courses</dt><dd>Computer Operator, Digital Marketing , Web Development</dd></div>
         <div class="spot"><dt>Interests</dt><dd>Web development, computer operations</dd></div>
       </dl>
     </div>
@@ -78,9 +98,14 @@
   </section>
 
   <section class="wrap sec" id="projects">
-    <div class="head"><h2>Projects</h2><span id="count" class="muted">Loading</span></div>
+    <div class="head">
+      <h2>Projects</h2>
+      <span id="count" class="muted">Loading</span>
+    </div>
     <div class="filters" id="filters" role="group" aria-label="Filter by language"></div>
-    <div class="grid repos" id="repos" aria-live="polite"><p class="muted">Loading repositories from GitHub…</p></div>
+    <div class="grid repos" id="repos" aria-live="polite">
+      <p class="muted">Loading repositories from GitHub…</p>
+    </div>
   </section>
 
   <section class="wrap sec" id="contact">
@@ -106,7 +131,11 @@
   </section>
 </main>
 
-<footer class="wrap foot"><span>© <span id="year"></span> Hasan Siddiqui</span><button class="chip" id="topBtn">Back to top</button></footer>
+<footer class="wrap foot">
+  <span>© 
+    <span id="year"></span> Hasan Siddiqui</span>
+    <button class="chip" id="topBtn">Back to top</button>
+</footer>
 
 <dialog id="palette" aria-label="Command menu">
   <input id="pq" placeholder="Jump to…" aria-label="Search commands" autocomplete="off">
