@@ -1,125 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Hasan Web Solutions</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Hasan Web Solutions</title>
+<meta name="description" content="About Hasan Web Solutions">
+<meta name="theme-color" content="#090a0f">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <div class="logo-box">HS</div>
-
-                <div>
-                    <h2>Hasan Web Solutions</h2>
-                    <p>Web Developer</p>
-                </div>
-            </div>
-
-            <nav>
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <p class="small-title">WELCOME TO MY WEBSITE</p>
-
-                <h1>
-                    Professional
-                    <span>Web Development</span>
-                    Services
-                </h1>
-
-                <p>
-                    I create clean, responsive and user-friendly websites
-                    using HTML, CSS and JavaScript.
-                </p>
-
-                <div class="buttons">
-                    <a href="services.html" class="btn">View Services</a>
-                    <a href="contact.html" class="btn secondary">Contact Me</a>
-                </div>
-            </div>
-
-            <div class="code-box">
-                <div class="code-top">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-                <pre>
-&lt;div class="website"&gt;
-    &lt;h1&gt;Hello World!&lt;/h1&gt;
-
-    &lt;p&gt;
-        Welcome to my website.
-    &lt;/p&gt;
-&lt;/div&gt;
-                </pre>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-
-            <div class="section-title">
-                <p>WHAT I DO</p>
-                <h2>My Main Skills</h2>
-            </div>
-
-            <div class="cards">
-                <div class="card">
-                    <div class="icon">🌐</div>
-                    <h3>Web Design</h3>
-                    <p>
-                        I design clean and modern websites
-                        using HTML and CSS.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">📱</div>
-                    <h3>Responsive Design</h3>
-                    <p>
-                        Websites that work properly on
-                        mobile, tablet and desktop.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">⚡</div>
-                    <h3>JavaScript</h3>
-                    <p>
-                        I use JavaScript to add interaction
-                        and functionality to websites.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>
-                © <span id="year"></span> Hasan Web Solutions. All Rights Reserved.
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
-    </script>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div><canvas id="fx" aria-hidden="true"></canvas><div class="glow" id="glow" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
+<header class="bar">
+  <a class="brand" href="index.html" aria-label="Home"><img src="assets/logo.png" alt="HS logo" width="42" height="42"><span><b>Hasan Web Solutions</b><small>Web Developer</small></span></a>
+  <nav class="nav" id="nav" aria-label="Primary"><a href="index.html">Home</a><a href="about.html" class=on>About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></nav>
+  <div class="tools"><button class="icon" id="themeBtn" aria-label="Toggle theme">◐</button><button class="icon menu" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button></div>
+</header>
+<main id="main">
+<section class="wrap page-head"><p>ABOUT ME</p><h1>Hi, I'm Hasan</h1><span class="lead">A Computer Information Technology student from Karachi, focused on building clean, responsive websites.</span></section>
+<section class="wrap sec"><h2>My story</h2><div class="grid">
+<article class="spot"><h3>Who I am</h3><p>I'm Muhammad Hasan Siddiqui, a motivated learner focused on web development, computer operations and practical digital skills.</p></article>
+<article class="spot"><h3>Education</h3><p>Aligarh Institute of Technology, DCIT 2024 to 2027.</p></article>
+<article class="spot"><h3>Courses</h3><p>Computer Operator, Digital Marketing and Web Development.</p></article>
+<article class="spot"><h3>My approach</h3><p>Learn the fundamentals, build real projects and keep improving every day.</p></article></div></section>
+<section class="wrap sec"><h2>What I work with</h2><div class="grid"><article class="spot"><div class="ico">🌐</div><h3>Web design</h3><p>Clean and modern layouts with HTML and CSS.</p></article><article class="spot"><div class="ico">⚡</div><h3>JavaScript</h3><p>Interactive features and functionality.</p></article><article class="spot"><div class="ico">📱</div><h3>Responsive design</h3><p>Works on mobile, tablet and desktop.</p></article></div></section>
+</main>
+<footer class="wrap foot"><span>© <span id="year"></span> Hasan Web Solutions. All rights reserved.</span><a class="chip" href="#main">Back to top</a></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
 </body>
 </html>
