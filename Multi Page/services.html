@@ -1,135 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Hasan Web Solutions</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services | Hasan Web Solutions</title>
+<meta name="description" content="Web development services by Hasan">
+<meta name="theme-color" content="#090a0f">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-
-                <div class="logo-box">HS</div>
-
-                <div>
-                    <h2>Hasan Web Solutions</h2>
-                    <p>Web Developer</p>
-                </div>
-            </div>
-
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html" class="active">Services</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <section class="page-header">
-        <div class="container">
-
-            <p>MY SERVICES</p>
-
-            <h1>What I Can Do</h1>
-
-            <span>
-                Professional services for your website.
-            </span>
-        </div>
-    </section>
-
-    <section class="services-section">
-        <div class="container">
-            <div class="cards">
-                <div class="card">
-                    <div class="icon">💻</div>
-
-                    <h3>HTML Development</h3>
-
-                    <p>
-                        Creating structured and semantic
-                        web pages using HTML5.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">🎨</div>
-
-                    <h3>CSS Styling</h3>
-
-                    <p>
-                        Designing attractive layouts,
-                        colors, fonts and animations.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">⚡</div>
-
-                    <h3>JavaScript</h3>
-
-                    <p>
-                        Adding interactive features and
-                        functionality using JavaScript.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">📱</div>
-
-                    <h3>Responsive Design</h3>
-
-                    <p>
-                        Making websites responsive for
-                        mobile, tablet and desktop.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">🔧</div>
-
-                    <h3>Website Maintenance</h3>
-
-                    <p>
-                        Basic website updates, corrections
-                        and content changes.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="icon">📈</div>
-
-                    <h3>Basic Digital Marketing</h3>
-
-                    <p>
-                        Basic digital marketing support
-                        for online presence.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-
-        <div class="container">
-
-            <p>
-                © <span id="year"></span> Hasan Web Solutions.
-                All Rights Reserved.
-            </p>
-
-        </div>
-
-    </footer>
-
-    <script>
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
-    </script>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div><canvas id="fx" aria-hidden="true"></canvas><div class="glow" id="glow" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress"></div>
+<header class="bar">
+  <a class="brand" href="index.html" aria-label="Home"><img src="assets/logo.png" alt="HS logo" width="42" height="42"><span><b>Hasan Web Solutions</b><small>Web Developer</small></span></a>
+  <nav class="nav" id="nav" aria-label="Primary"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html" class=on>Services</a><a href="contact.html">Contact</a></nav>
+  <div class="tools"><button class="icon" id="themeBtn" aria-label="Toggle theme">◐</button><button class="icon menu" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button></div>
+</header>
+<main id="main">
+<section class="wrap page-head"><p>MY SERVICES</p><h1>What I can do</h1><span class="lead">Professional services for your website.</span></section>
+<section class="wrap sec"><div class="grid"><article class="spot"><div class="ico">💻</div><h3>HTML development</h3><p>Structured and semantic web pages using HTML5.</p></article><article class="spot"><div class="ico">🎨</div><h3>CSS styling</h3><p>Attractive layouts, colors, fonts and animations.</p></article><article class="spot"><div class="ico">⚡</div><h3>JavaScript</h3><p>Interactive features and functionality using JavaScript.</p></article><article class="spot"><div class="ico">📱</div><h3>Responsive design</h3><p>Websites that fit mobile, tablet and desktop.</p></article><article class="spot"><div class="ico">🔧</div><h3>Website maintenance</h3><p>Basic website updates, corrections and content changes.</p></article><article class="spot"><div class="ico">📈</div><h3>Basic digital marketing</h3><p>Basic digital marketing support for your online presence.</p></article></div></section>
+</main>
+<footer class="wrap foot"><span>© <span id="year"></span> Hasan Web Solutions. All rights reserved.</span><a class="chip" href="#main">Back to top</a></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
 </body>
 </html>
