@@ -1082,7 +1082,7 @@
                 animation: none
             }
         }
-        .cert-wrap{display:flex;justify-content:center;padding-top:5.5rem}
+.cert-wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:1.2rem;padding-top:5.5rem}        
 .cert-btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;gap:1rem;padding:.9rem 1.7rem .9rem .9rem;border-radius:99px;background:var(--glass);backdrop-filter:blur(18px) saturate(170%);-webkit-backdrop-filter:blur(18px) saturate(170%);box-shadow:var(--sh);transition:transform .35s cubic-bezier(.3,1.4,.5,1),box-shadow .35s}
 .cert-btn::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;pointer-events:none;background:conic-gradient(from var(--a),var(--ac),var(--v),var(--ac2),var(--ac));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 4s linear infinite}
 .cert-btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.3) 50%,transparent 65%);transform:translateX(-120%)}
@@ -1192,19 +1192,37 @@
         </section>
     </main>
     <section class="cert-wrap wrap" aria-label="Certificates">
-  <a class="cert-btn" 
-      href="assets/WhatsApp Image 2026-10-24 at 9.50.23 AM.jpeg" 
-      href="assets/WhatsApp Image 2026-10-24 at 9.51.32 AM.jpeg"
-      href="assets/WhatsApp Image 2026-10-24 at 9.51.54 AM.jpeg"
-      target="_blank" rel="noopener">
+
+  <a class="cert-btn" href="assets/certificate1.jpg" target="_blank" rel="noopener">
     <span class="cert-ico">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="9" r="5.5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/><path d="m10 9 1.5 1.5L14 7.5"/>
       </svg>
     </span>
-    <span class="cert-txt"><small>Achievement</small><b>View Certificate</b></span>
+    <span class="cert-txt"><small>Certificate 01</small><b>View Certificate</b></span>
     <span class="cert-arr">→</span>
   </a>
+
+  <a class="cert-btn" href="assets/certificate2.jpg" target="_blank" rel="noopener">
+    <span class="cert-ico">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="9" r="5.5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/><path d="m10 9 1.5 1.5L14 7.5"/>
+      </svg>
+    </span>
+    <span class="cert-txt"><small>Certificate 02</small><b>View Certificate</b></span>
+    <span class="cert-arr">→</span>
+  </a>
+
+  <a class="cert-btn" href="assets/certificate3.jpg" target="_blank" rel="noopener">
+    <span class="cert-ico">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="9" r="5.5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/><path d="m10 9 1.5 1.5L14 7.5"/>
+      </svg>
+    </span>
+    <span class="cert-txt"><small>Certificate 03</small><b>View Certificate</b></span>
+    <span class="cert-arr">→</span>
+  </a>
+
 </section>
     <footer class="wrap foot"><span>Designed &amp; developed by <b>Hasan Siddiqui</b> · <span id="year"></span></span><a
             class="chip" href="#main">Back to top</a></footer>
