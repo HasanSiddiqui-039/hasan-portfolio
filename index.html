@@ -1082,6 +1082,20 @@
                 animation: none
             }
         }
+        .cert-wrap{display:flex;justify-content:center;padding-top:5.5rem}
+.cert-btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;gap:1rem;padding:.9rem 1.7rem .9rem .9rem;border-radius:99px;background:var(--glass);backdrop-filter:blur(18px) saturate(170%);-webkit-backdrop-filter:blur(18px) saturate(170%);box-shadow:var(--sh);transition:transform .35s cubic-bezier(.3,1.4,.5,1),box-shadow .35s}
+.cert-btn::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;pointer-events:none;background:conic-gradient(from var(--a),var(--ac),var(--v),var(--ac2),var(--ac));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 4s linear infinite}
+.cert-btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.3) 50%,transparent 65%);transform:translateX(-120%)}
+.cert-btn:hover{transform:translateY(-5px) scale(1.03);box-shadow:var(--sh),0 24px 60px -14px color-mix(in srgb,var(--v) 75%,transparent)}
+.cert-btn:hover::after{transform:translateX(120%);transition:transform .8s}
+.cert-ico{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;color:#fff;background:linear-gradient(135deg,var(--ac),var(--v) 55%,var(--ac2));box-shadow:0 0 26px -4px var(--ac);transition:transform .5s}
+.cert-ico svg{width:26px;height:26px}
+.cert-btn:hover .cert-ico{transform:rotate(-12deg) scale(1.12)}
+.cert-txt{display:grid;line-height:1.25}
+.cert-txt small{font:600 .68rem "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ac2)}
+.cert-txt b{font-size:1rem}
+.cert-arr{margin-left:.3rem;transition:transform .25s;color:var(--ac)}
+.cert-btn:hover .cert-arr{transform:translateX(6px)}
     </style>
 </head>
 
@@ -1094,7 +1108,7 @@
                 width="42" height="42"><span><b>Hasan Siddiqui</b></span></a>
         <nav class="nav" id="nav" aria-label="Primary"><a href="#about">Profile</a><a href="#projects">Projects</a><a
                 href="https://github.com/HasanSiddiqui-039" target="_blank" rel="noopener">GitHub</a></nav>
-        <div class="tools"><a class="btn primary" href="assets/WhatsApp Image 2026-09-29 at 1.25.44 AM.jpeg" target="_blank" rel="noopener"
+        <div class="tools"><a class="btn primary" href="assets/image.cv.png" target="_blank" rel="noopener"
                 aria-label="Open my CV (PDF)">CV</a><button class="icon" id="themeBtn"
                 aria-label="Toggle theme">◐</button><button class="icon menu" id="menuBtn" aria-label="Menu"
                 aria-expanded="false">☰</button></div>
@@ -1177,6 +1191,17 @@
             </div>
         </section>
     </main>
+    <section class="cert-wrap wrap" aria-label="Certificates">
+  <a class="cert-btn" href="assets/certificate.pdf" target="_blank" rel="noopener">
+    <span class="cert-ico">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="9" r="5.5"/><path d="m9 13.5-1.5 7L12 18l4.5 2.5-1.5-7"/><path d="m10 9 1.5 1.5L14 7.5"/>
+      </svg>
+    </span>
+    <span class="cert-txt"><small>Achievement</small><b>View Certificate</b></span>
+    <span class="cert-arr">→</span>
+  </a>
+</section>
     <footer class="wrap foot"><span>Designed &amp; developed by <b>Hasan Siddiqui</b> · <span id="year"></span></span><a
             class="chip" href="#main">Back to top</a></footer>
     <div class="toast" id="toast" role="status"></div>
